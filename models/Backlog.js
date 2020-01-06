@@ -2,8 +2,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const backlogSchema = new Schema({
-  name: String,
-  description: String
+  user: String,
+  priority: String,
+  date: Date,
+  tags: String,
+  issue: String
 });
 
 mongoose.model('backlogs', backlogSchema);
