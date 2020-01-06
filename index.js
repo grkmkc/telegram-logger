@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+//Import models
+require('./models/Backlog');
+
 const app = express();
 
 mongoose.Promise = global.Promise;
@@ -11,6 +14,12 @@ mongoose.connect(
 );
 
 app.use(bodyParser.json());
+
+// Import Routes
+
+require('./routes/backlogRoute')(app);
+
+// Environment
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
