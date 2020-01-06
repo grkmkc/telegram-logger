@@ -6,7 +6,8 @@ const backlogSchema = new Schema({
   priority: String,
   date: Date,
   tags: String,
-  issue: String
+  issue: String,
+  name: String
 });
 
 mongoose.model('backlogs', backlogSchema);

@@ -23,6 +23,7 @@
 .section-card-title {
   background-color: #a9a9a9;
   padding: 0.25em;
+  font-size: 16px !important;
 }
 .p-1 {
   padding: 0.25em;
