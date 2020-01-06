@@ -15,6 +15,7 @@ const BackLog = () => {
     console.log(res);
     setbacklogs(res);
   };
+
   return (
     <div>
       {backlogs ? (
@@ -28,6 +29,14 @@ const BackLog = () => {
                       {backlog.name}
                     </span>
                     <div className="p-1">{backlog.issue}</div>
+                    <div className="tagsWrapper">
+                      <span
+                        className="tagsStyle"
+                        style={{ backgroundColor: backlog.tags.metaData.color }}
+                      >
+                        {backlog.tags.name}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
