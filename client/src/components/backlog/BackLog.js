@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import backlogService from '../../services/backlogService';
 
-const BackLog = () => {
+const BackLog = ({ name }) => {
   const [backlogs, setbacklogs] = useState(null);
 
   useEffect(() => {
@@ -9,13 +9,11 @@ const BackLog = () => {
       getBacklogs();
     }
   });
-
   const getBacklogs = async () => {
     let res = await backlogService.getAll();
     console.log(res);
     setbacklogs(res);
   };
-
   return (
     <div>
       {backlogs ? (

@@ -26,7 +26,6 @@ module.exports = app => {
       tags.push(editBacklog(tag));
     });
     req.body.tags = tags;
-
     let backlog = await Backlog.create(req.body);
     return res.status(201).send({
       error: false,

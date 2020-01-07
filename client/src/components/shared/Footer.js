@@ -21,7 +21,7 @@ function Footer() {
                     Link 1
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a className="grey-text text-lighten-3" href="#!">
                     Link 2
                   </a>
@@ -35,7 +35,7 @@ function Footer() {
                   <a className="grey-text text-lighten-3" href="#!">
                     Link 4
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
