@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 export class Development extends Component {
   render() {
-    return <div className="development-section"></div>;
+    return (
+      <div style={{ overflow: 'hidden', clear: 'both' }}>
+        <div className="development-section"></div>
+      </div>
+    );
   }
 }
 

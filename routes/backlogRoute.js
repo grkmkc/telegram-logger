@@ -9,11 +9,10 @@ module.exports = app => {
     return res.status(200).send(backlogs);
   });
 
-  function editBacklog(body) {
+  function editBacklog(tag) {
     let val;
     for (let [key, value] of Object.entries(colors)) {
-      console.log(body.tags);
-      if (key.toLowerCase() === body.tags) {
+      if (key.toLowerCase() === tag) {
         val = value;
         /* console.log(backlog.tags); */
       }
@@ -22,13 +21,11 @@ module.exports = app => {
   }
 
   app.post(`/api/backlog`, async (req, res) => {
-    let tags = await editBacklog(req.body);
-    req.body.tags = {
-      name: tags.name,
-      metaData: {
-        color: tags.metaData.color
-      }
-    };
+    let tags = [];
+    req.body.tags.map(tag => {
+      tags.push(editBacklog(tag));
+    });
+    req.body.tags = tags;
     let backlog = await Backlog.create(req.body);
     return res.status(201).send({
       error: false,

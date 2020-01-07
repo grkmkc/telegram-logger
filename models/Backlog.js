@@ -5,12 +5,7 @@ const backlogSchema = new Schema({
   user: String,
   priority: String,
   date: Date,
-  tags: {
-    name: String,
-    metaData: {
-      color: String
-    }
-  },
+  tags: [],
   issue: String,
   name: String
 });

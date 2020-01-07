@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { DndProvider } from 'react-dnd';
+import Backend from 'react-dnd-html5-backend';
 import './App.css';
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
@@ -18,20 +20,26 @@ function App() {
     <div className="App">
       <Header></Header>
       <div className="main">
-        <div className="row wrapper-row row-no_margin">
-          <div className="col s3 wrapper-cols">
-            <BackLog></BackLog>
+        <DndProvider backend={Backend}>
+          <div className="row wrapper-row row-no_margin">
+            <div className="col s3 wrapper-cols">
+              <h6 className="center-align wrapper-cols-h">Backlog</h6>
+              <BackLog></BackLog>
+            </div>
+            <div className="col  s3 wrapper-cols">
+              <h6 className="center-align wrapper-cols-h">Development</h6>
+              <Development></Development>
+            </div>
+            <div className="col  s3 wrapper-cols">
+              <h6 className="center-align wrapper-cols-h">Done</h6>
+              <DoneSection></DoneSection>
+            </div>
+            <div className="col  s3 wrapper-cols">
+              <h6 className="center-align wrapper-cols-h">Review</h6>
+              <Review></Review>
+            </div>
           </div>
-          <div className="col  s3 wrapper-cols">
-            <Development></Development>
-          </div>
-          <div className="col  s3 wrapper-cols">
-            <DoneSection></DoneSection>
-          </div>
-          <div className="col  s3 wrapper-cols">
-            <Review></Review>
-          </div>
-        </div>
+        </DndProvider>
       </div>
       <Footer></Footer>
     </div>
