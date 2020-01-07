@@ -20,15 +20,19 @@ function App() {
       <div className="main">
         <div className="row wrapper-row row-no_margin">
           <div className="col s3 wrapper-cols">
+            <h6 className="center-align wrapper-cols-h">Backlog</h6>
             <BackLog></BackLog>
           </div>
           <div className="col  s3 wrapper-cols">
+            <h6 className="center-align wrapper-cols-h">Backlog</h6>
             <Development></Development>
           </div>
           <div className="col  s3 wrapper-cols">
+            <h6 className="center-align wrapper-cols-h">Backlog</h6>
             <DoneSection></DoneSection>
           </div>
           <div className="col  s3 wrapper-cols">
+            <h6 className="center-align wrapper-cols-h">Backlog</h6>
             <Review></Review>
           </div>
         </div>

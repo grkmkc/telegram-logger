@@ -30,12 +30,17 @@ const BackLog = () => {
                     </span>
                     <div className="p-1">{backlog.issue}</div>
                     <div className="tagsWrapper">
-                      <span
-                        className="tagsStyle"
-                        style={{ backgroundColor: backlog.tags.metaData.color }}
-                      >
-                        {backlog.tags.name}
-                      </span>
+                      {backlog.tags
+                        ? backlog.tags.map((tag, key) => (
+                            <span
+                              key={key}
+                              className="tagsStyle"
+                              style={{ backgroundColor: tag.metaData.color }}
+                            >
+                              {tag.name}
+                            </span>
+                          ))
+                        : ''}
                     </div>
                   </div>
                 </div>
