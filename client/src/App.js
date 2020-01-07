@@ -24,7 +24,7 @@ function App() {
           <div className="row wrapper-row row-no_margin">
             <div className="col s3 wrapper-cols">
               <h6 className="center-align wrapper-cols-h">Backlog</h6>
-              <BackLog></BackLog>
+              <BackLog name="backlogCards"></BackLog>
             </div>
             <div className="col  s3 wrapper-cols">
               <h6 className="center-align wrapper-cols-h">Development</h6>
