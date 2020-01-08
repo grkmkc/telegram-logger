@@ -19,6 +19,10 @@ app.use(bodyParser.json());
 
 require('./routes/backlogRoute')(app);
 
+//Import Telegram API
+
+require('./routes/telegram-api');
+
 // Environment
 
 if (process.env.NODE_ENV === 'production') {

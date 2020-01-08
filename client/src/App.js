@@ -24,15 +24,15 @@ function App() {
             <BackLog></BackLog>
           </div>
           <div className="col  s3 wrapper-cols">
-            <h6 className="center-align wrapper-cols-h">Backlog</h6>
+            <h6 className="center-align wrapper-cols-h">Development</h6>
             <Development></Development>
           </div>
           <div className="col  s3 wrapper-cols">
-            <h6 className="center-align wrapper-cols-h">Backlog</h6>
+            <h6 className="center-align wrapper-cols-h">Done</h6>
             <DoneSection></DoneSection>
           </div>
           <div className="col  s3 wrapper-cols">
-            <h6 className="center-align wrapper-cols-h">Backlog</h6>
+            <h6 className="center-align wrapper-cols-h">Review</h6>
             <Review></Review>
           </div>
         </div>
