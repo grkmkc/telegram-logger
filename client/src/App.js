@@ -6,6 +6,7 @@ import BackLog from './components/backlog/BackLog';
 import Development from './components/development/Development';
 import DoneSection from './components/doneSection/DoneSection';
 import Review from './components/review/Review';
+import BoardButtons from '../src/components/shared/BoardButtons';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -20,8 +21,8 @@ function App() {
       <div className="main">
         <div className="row wrapper-row row-no_margin">
           <div className="col s3 wrapper-cols">
-            <h6 className="center-align wrapper-cols-h">Backlog</h6>
-            <BackLog></BackLog>
+            <BoardButtons name="Backlog"></BoardButtons>
+            <BackLog name="backlog"></BackLog>
           </div>
           <div className="col  s3 wrapper-cols">
             <h6 className="center-align wrapper-cols-h">Development</h6>

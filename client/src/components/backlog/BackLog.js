@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import backlogService from '../../services/backlogService';
+import BoardCards from '../shared/BoardCards';
 
 const BackLog = ({ name }) => {
   const [backlogs, setbacklogs] = useState(null);
@@ -18,33 +19,7 @@ const BackLog = ({ name }) => {
     <div>
       {backlogs ? (
         backlogs.map((backlog, key) => (
-          <div className="backlog-section" key={key}>
-            <div className="row row-no_margin">
-              <div className="col s12">
-                <div className="card blue-grey darken-1">
-                  <div className="card-content white-text no-padding">
-                    <span className="card-title section-card-title">
-                      {backlog.name}
-                    </span>
-                    <div className="p-1">{backlog.issue}</div>
-                    <div className="tagsWrapper">
-                      {backlog.tags
-                        ? backlog.tags.map((tag, key) => (
-                            <span
-                              key={key}
-                              className="tagsStyle"
-                              style={{ backgroundColor: tag.metaData.color }}
-                            >
-                              {tag.name}
-                            </span>
-                          ))
-                        : ''}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <BoardCards name={name} backlog={backlog} key={key}></BoardCards>
         ))
       ) : (
         <div>Loading...</div>
