@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 //Import models
 require('./models/Backlog');
+require('./models/Notes');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 // Import Routes
 
 require('./routes/backlogRoute')(app);
+require('./routes/noteRoute')(app);
 
 //Import Telegram API
 

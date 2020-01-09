@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Backlog = mongoose.model('backlogs');
+const Note = mongoose.model('notes');
 const telegram = require('telegram-bot-api');
 require('dotenv').config();
 
@@ -68,6 +69,36 @@ api.on('update', function(message) {
       })
       .then(function(data) {
         console.log(util.inspect(data, false, null));
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
+  if (message.message.text.includes('/notes')) {
+    let user = message.message.chat.first_name;
+    let note = message.message.text.substring(6);
+    let chat_id = message.message.chat.id;
+    let user_id = message.message.from.id;
+    let obj = {
+      name: `Telegram logged by ${user}`,
+      user: {
+        name: user
+      },
+      content: note,
+      tags: [
+        {
+          name: 'telegram',
+          metaData: {
+            color: '#0088CC'
+          }
+        }
+      ]
+    };
+    let notes = Note.create(obj);
+    api
+      .sendMessage({
+        chat_id: chat_id,
+        text: 'Thanks! Your note has been logged... <3'
       })
       .catch(function(err) {
         console.log(err);

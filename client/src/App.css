@@ -50,3 +50,12 @@
 .hidden {
   display: none;
 }
+.material-bg {
+  background-color: #ee6e73 !important;
+}
+.card-m05 {
+  margin: 0.5rem 0 0.5rem 0 !important;
+}
+.card > .card-content {
+  padding: 0.5em !important;
+}
