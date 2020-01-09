@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
-import BackLog from './components/backlog/BackLog';
-import Development from './components/development/Development';
-import DoneSection from './components/doneSection/DoneSection';
-import Review from './components/review/Review';
-import BoardButtons from '../src/components/shared/BoardButtons';
+import LandingPage from './components/landing/LandingPage';
+import Board from './components/board/Board';
+import Notes from '../src/components/notes/Notes';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -16,30 +15,23 @@ function App() {
     M.AutoInit();
   });
   return (
-    <div className="App">
-      <Header></Header>
-      <div className="main">
-        <div className="row wrapper-row row-no_margin">
-          <div className="col s3 wrapper-cols">
-            <BoardButtons name="Backlog"></BoardButtons>
-            <BackLog name="backlog"></BackLog>
-          </div>
-          <div className="col  s3 wrapper-cols">
-            <BoardButtons name="Development"></BoardButtons>
-            <Development></Development>
-          </div>
-          <div className="col  s3 wrapper-cols">
-            <BoardButtons name="Done"></BoardButtons>
-            <DoneSection></DoneSection>
-          </div>
-          <div className="col  s3 wrapper-cols">
-            <BoardButtons name="Review"></BoardButtons>
-            <Review></Review>
-          </div>
-        </div>
+    <Router>
+      <div className="App">
+        <Header></Header>
+        <Switch>
+          <Route path="/board">
+            <Board />
+          </Route>
+          <Route path="/notes">
+            <Notes />
+          </Route>
+          <Route path="/">
+            <LandingPage />
+          </Route>
+        </Switch>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
-    </div>
+    </Router>
   );
 }
 

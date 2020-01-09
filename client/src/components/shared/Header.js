@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './css/Header.css';
-
+import { Link } from 'react-router-dom';
 function Header() {
   return (
     <Fragment>
@@ -16,10 +16,10 @@ function Header() {
               </a>
               <ul className="right hide-on-med-and-down">
                 <li>
-                  <a href="#!">Board</a>
+                  <Link to="/notes">Notes</Link>
                 </li>
                 <li>
-                  <a href="#!">Notes</a>
+                  <Link to="/board">Board</Link>
                 </li>
               </ul>
             </div>
