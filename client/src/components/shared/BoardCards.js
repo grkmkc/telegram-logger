@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 
-const BoardCards = ({ name, backlog, key }) => {
+const BoardCards = ({ name, backlog, keyIndex }) => {
   return (
     <Fragment>
-      <div className={`${name}-section`} key={key}>
+      <div className={`${name}-section`} key={keyIndex}>
         <div className="row row-no_margin">
           <div className="col s12">
             <div className="card blue-grey darken-1">

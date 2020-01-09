@@ -1,0 +1,31 @@
+.custom-add-button {
+  background: floralwhite;
+  border-radius: 4px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+.custom-add-button > i {
+  color: #ea3f18;
+}
+.custom-remove-button {
+  background: floralwhite;
+  border-radius: 4px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+.custom-remove-button > i {
+  color: #ea3f18;
+}
+.tiny-20 {
+  font-size: 20px;
+}

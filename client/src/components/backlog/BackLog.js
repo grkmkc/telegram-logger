@@ -19,7 +19,12 @@ const BackLog = ({ name }) => {
     <div>
       {backlogs ? (
         backlogs.map((backlog, key) => (
-          <BoardCards name={name} backlog={backlog} key={key}></BoardCards>
+          <BoardCards
+            name={name}
+            backlog={backlog}
+            keyIndex={key}
+            key={key}
+          ></BoardCards>
         ))
       ) : (
         <div>Loading...</div>
