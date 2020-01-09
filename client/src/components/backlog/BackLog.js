@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import backlogService from '../../services/backlogService';
 import BoardCards from '../shared/BoardCards';
 

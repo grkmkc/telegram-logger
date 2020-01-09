@@ -11,9 +11,14 @@ const BoardButtons = ({ name }) => {
         <h6 className="center-align" style={{ width: '100%' }}>
           {name}
         </h6>
-        <a className="custom-remove-button">
-          <i className="tiny-20 material-icons">search</i>
-        </a>
+
+        {name === 'Backlog' ? (
+          <a className="custom-remove-button">
+            <i className="tiny-20 material-icons">search</i>
+          </a>
+        ) : (
+          ''
+        )}
         <a className="custom-remove-button">
           <i className="tiny-20 material-icons">delete</i>
         </a>
